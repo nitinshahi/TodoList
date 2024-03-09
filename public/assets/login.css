@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "PT Sans", Calibri, Tahoma, sans-serif;
+}
+
+.main {
+    background-color: rgba(128, 128, 128, 0.01);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+}
+.main .banner-img {
+    width: 700px;
+    height: 700px;
+}
+.container {
+    position: relative;
+    background-color: white;
+    width: fit-content;
+    height: fit-content;
+    padding-top: 50px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.container .logo {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
+        rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+.container h1 {
+    text-align: center;
+    padding: 40px 0px 20px 0px;
+}
+.container .form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+.container input {
+    padding-left: 30px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid black;
+    font-size: 16px;
+    width: 300px;
+}
+
+.button-section input {
+    display: none;
+}
+
+.button-section {
+    margin-top: 15px;
+    color: black;
+    border: 1px solid black;
+    text-decoration: none;
+    padding: 8px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    background: transparent;
+    position: relative;
+    transition: all 0.5s;
+    overflow: hidden;
+    z-index: 1;
+    cursor: pointer;
+}
+.button-section:hover {
+    color: white;
+}
+
+.button-section::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    top: 0;
+    left: -40px;
+    transform: skewX(45deg);
+    z-index: -1;
+    transition: all 0.5s;
+    background-color: black;
+}
+
+.button-section:hover::before {
+    width: 160%;
+}
+
+.container .form svg {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    left: 7px;
+    top: 22%;
+}
+.container .form .username {
+    position: relative;
+}
+.container .form .password {
+    position: relative;
+}
+.container .form .name {
+    position: relative;
+}
+.container .form .email {
+    position: relative;
+}
+.container .form .phone {
+    position: relative;
+}
+
+.main .container .noacc a {
+    text-decoration: none;
+}
+.main .container .noacc {
+    font-size: 18px;
+}
