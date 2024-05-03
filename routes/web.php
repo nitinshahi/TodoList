@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TodoController;
 use App\Http\Controllers\UserController;
@@ -17,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('edit');
+    return redirect('login');
 })->name('test');
 
 Route::get('/login', [AuthController::class, 'index'])->name('login');
@@ -36,3 +37,12 @@ Route::post('/add-task', [TodoController::class, 'store'])->name('add-task')->mi
 Route::get('/list-task/{todo}/edit', [TodoController::class, 'edit'])->name('edit-task')->middleware('auth');
 Route::post('/list-task/{todo}/update', [TodoController::class, 'update'])->name('update-task')->middleware('auth');
 Route::delete('/list-task/{todo}/destroy', [TodoController::class, 'destroy'])->name('delete')->middleware('auth');;
+
+Route::get('/admin', [AdminController::class, 'index'])->name('alogin');
+Route::post('/admin', [AdminController::class, 'login'])->name('alogin');
+
+
+
+Route::get('/admin_user', [AdminController::class, 'viewuser'])->name('adminuser');
+Route::get('/admin_task', [AdminController::class, 'addtask'])->name('admintask');
+Route::get('/admin_add_user', [AdminController::class, 'adduser'])->name('adminadd');

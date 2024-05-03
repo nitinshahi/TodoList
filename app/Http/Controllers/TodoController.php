@@ -25,7 +25,8 @@ class TodoController extends Controller
     }
     public function store(Request $request)
     {
-        // dd($request);
+        $user = auth()->user();
+        // dd($user);
         validator($request->all(), [
             'title' => ['required', 'string', 'max:255'],
             'price' => ['required', 'decimal:0,2'],
@@ -33,7 +34,7 @@ class TodoController extends Controller
             'status' => ['boolean'],
         ])->validate();
 
-        Todo::create($request->all());
+        Todo::create($request->all() + ['user_id' => $user->id]);
         return redirect('/list-task ');
     }
 

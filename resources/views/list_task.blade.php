@@ -53,7 +53,7 @@
               <th>Task Id</th>
               <th>Task Name</th>
               <th>Created At</th>
-              <th>Projected Date</th>
+              <th>DeadLine</th>
               <th>Price</th>
               <th>Status</th>
               <th>Action</th>
@@ -66,7 +66,7 @@
                 <td>{{$count}}</td>
                 <td>{{ $todo->title }}</td>
                 <td>{{ $todo->created_at }}</td>
-                <td>{{ $todo->target_date }}</td>
+                <td class = "targetDate">{{ $todo->target_date }}</td>
                 <td>{{ $todo->price }}</td>
                 <td>{{ $todo->status? "Completed":"Incomplete" }}</td>
                 <td class="action">
